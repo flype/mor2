@@ -11,7 +11,7 @@ require 'webrat'
 
 Webrat.configure do |config|
   config.mode = :selenium 
-  config.selenium_server_address = "0.0.0.0"
+  config.selenium_server_address = "127.0.0.1"
 end
 
 require 'database_cleaner'
