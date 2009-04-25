@@ -1,5 +1,17 @@
-<% form_for Event.new do |f| %>
- <%= f.label 'Your Email' %>
- <%= f.text_field 'email' %>
-                  
+<% form_for @event do |f| %>
+ <%= f.label :email, 'Your Email' %>
+ <%= f.text_field :email %>
+ <%= f.label :name, 'Event name' %>
+ <%= f.text_field :name %>
+ <%= f.label :location, 'Event location' %>
+ <%= f.text_field :location %>
+ <div id="dates">
+   <%= render :partial => 'new_date_form', :locals => { :f => f } %>
+ </div>
+
+ <%= link_to_function "add another" do |page| 
+   page.insert_html :bottom, 'dates', :partial => 'new_date_form', :locals => { :f => f }
+   page << "$('#dates label:last').html($('#dates label:last').html().replace('1', $('#dates label').length))"
+ end %>
+ <%= f.submit "Send" %>
 <% end %>

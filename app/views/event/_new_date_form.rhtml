@@ -1,0 +1,4 @@
+<% f.fields_for :proposed_dates, ProposedDate.new do |df| %>
+ <%= df.label "Event date 1" %>
+ <%= df.date_select :date %>
+<% end %>
