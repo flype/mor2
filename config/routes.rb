@@ -30,10 +30,10 @@ ActionController::Routing::Routes.draw do |map|
   #     admin.resources :products
   #   end            
   
-  map.resources :events
+  map.resources :events, :member => { :send => :get }
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
-  map.root :controller => "event", :action => "new"
+  map.root :controller => "events", :action => "new"
 
   # See how all your routes lay out with "rake routes"
 

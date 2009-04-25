@@ -19,6 +19,10 @@ module SelectDate
     select date.day, :from => "#{id_prefix}_#{DATE_TIME_SUFFIXES[:day]}"
   end
   
+  def current_url
+    selenium.get_location.gsub("http://localhost:3001", "")
+  end
+  
 end
 
 World(SelectDate)

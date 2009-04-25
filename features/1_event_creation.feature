@@ -12,15 +12,15 @@ Feature: Event creation
     And I fill in "Event name" with "Monsters of Ruby III"
     And I fill in "Event location" with "Serrano 120, Madrid"
     And I select "October 22, 2009" as the "Event date 1" date
-    # And I click on "add another"
-    # And I select "October 29, 2009" as the "Event date 2" date
+    And I click on "add another"
+    And I select "October 29, 2009" as the "Event date 2" date
     And I press "Next"
     
     Then the following event should have been created:
-    | email    | christos@me.com        |
+    | email    | dchelimsky@gmail.com   |
     | name     | Monsters of Ruby III   |
     | location | Serrano 120, Madrid    |
-    | dates    | 2009/10/22, 2009/10/29 |
+    | dates    | 2009-10-22, 2009-10-29 |
     And I should be on the send form for the "Monsters of Ruby III" event
     
   Scenario: Wrong event data

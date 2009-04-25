@@ -13,6 +13,7 @@ end
 
 When /^I press "([^\"]*)"$/ do |button|
   click_button(button)
+  selenium.wait_for_page_to_load
 end
 
 When /^I follow "([^\"]*)"$/ do |link|

@@ -11,7 +11,9 @@
 
  <%= link_to_function "add another" do |page| 
    page.insert_html :bottom, 'dates', :partial => 'new_date_form', :locals => { :f => f }
-   page << "$('#dates label:last').html($('#dates label:last').html().replace('1', $('#dates label').length))"
+   
+   page << "$('#dates .event_date:last select').each(function() { $(this).attr('id', $(this).attr('id').replace('_1_', '_'+ ($('#dates label').length - 1) + '_')) })"
+   page << "$('#dates label:last').html($('#dates label:last').text().replace('1', $('#dates label').length))"
  end %>
- <%= f.submit "Send" %>
+ <%= f.submit "Next" %>
 <% end %>

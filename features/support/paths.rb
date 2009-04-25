@@ -16,6 +16,10 @@ module NavigationHelpers
     
     when /the homepage/
       "/"
+      
+    when /the send form for the "(.+)" event/
+      event_id = Event.find_by_name($1).id
+      "/events/#{event_id}/send"
     
     # Add more page name => path mappings here
     
