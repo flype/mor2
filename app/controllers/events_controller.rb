@@ -13,4 +13,14 @@ class EventsController < ApplicationController
     end
   end
 
+  def show
+    @event=Event.find(params[:id], :include=>:proposed_dates)
+    allowed=@event.check_attendee(params[:attendee_token])
+    if allowed      
+      render
+    else
+      render :nothing=>true, :status=>401
+    end
+    
+  end
 end

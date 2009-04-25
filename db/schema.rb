@@ -9,13 +9,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090425172847) do
+ActiveRecord::Schema.define(:version => 20090425191205) do
 
   create_table "attendees", :force => true do |t|
-    t.integer  "event_id",                                    :null => false
-    t.string   "email",                                       :null => false
-    t.boolean  "is_admin",                 :default => false
-    t.string   "token",      :limit => 20,                    :null => false
+    t.integer  "event_id",                 :null => false
+    t.string   "email",                    :null => false
+    t.string   "token",      :limit => 20, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -32,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20090425172847) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "token",      :limit => 20
+    t.date     "final_date"
   end
 
   create_table "proposed_dates", :force => true do |t|
