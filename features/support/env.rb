@@ -10,7 +10,8 @@ Cucumber::Rails.bypass_rescue # Comment out this line if you want Rails own erro
 require 'webrat'
 
 Webrat.configure do |config|
-  config.mode = :selenium
+  config.mode = :selenium 
+  config.selenium_server_address = "0.0.0.0"
 end
 
 require 'database_cleaner'
