@@ -1,8 +1,7 @@
 class CreateEvents < ActiveRecord::Migration
   def self.up
     create_table :events do |t|
-      t.string :email, :name, :location
-      t.dat
+      t.string :email, :name, :location      
       t.timestamps
     end
   end
